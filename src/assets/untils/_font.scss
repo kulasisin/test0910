@@ -1,0 +1,41 @@
+small, .small {
+  font-size: $font-size-sm;
+}
+big, .big {
+  font-size: $h1-font-size !important;
+  @include wed {
+    font-size: 64px !important;
+  }
+}
+
+// style
+.title-style {
+  text-align: center;
+  font-size: 40px;
+  span {
+    display: inline-block;
+    padding-bottom: 16px;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+    border-color: $gray-600;
+  }
+  @include pad {
+    font-size: 48px;
+  }
+}
+
+// RWD
+@include pad {
+  @each $number, $size in $font-sizes {
+    .fs-md-#{$number} {
+      font-size: $size !important;
+    }
+  }
+}
+@include wed {
+  @each $number, $size in $font-sizes {
+    .fs-lg-#{$number} {
+      font-size: $size !important;
+    }
+  }
+}
